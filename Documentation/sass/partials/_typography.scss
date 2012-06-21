@@ -1,0 +1,53 @@
+@import "compass/utilities";
+@import "compass/css3";
+
+body {
+  font-family: "PT Sans", sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 1em;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: .5em;
+}
+
+h3 {
+  font-weight: bold;
+  margin-bottom: 1em;
+  font-size: 17px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+code {
+  background-color: #eec;
+  padding: 0 3px;
+  @include text-shadow(#fff 0 1px 0);
+}
+
+p {
+  line-height: 1.3em;
+  margin-bottom: 1em;
+  color: #333;
+  font-size: 17px;
+}
+
+ul, ol {
+  line-height: 1.5em;
+  font-size: 17px;
+  list-style-type: disc;
+  padding-left: 2em;
+  margin-bottom: 2em;
+}
+
+p.introduction {
+  font-size: 20px;
+}

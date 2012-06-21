@@ -1,3 +1,5 @@
 .DS_Store
 /build
 /package
+.sass-cache
+/Documentation/stylesheets/*.css

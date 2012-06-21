@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>WordPress Cookbook Getting Started Guide</title>
+  <head>
+    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+        <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400italic,400,700,700italic' rel='stylesheet' type='text/css'>
+  </head>
+</head>
+
+<body>
+  
+  <div class="container">
+    
+    <div class="content">
+      <h1>WordPress CookBook Getting Started Guide</h1>
+      
+      <div class="page intro">
+    
+        <p class="introduction">
+          Hi there! And thank you so much for buying our WordPress Cookbook theme. 
+          We are very grateful you did and we are committed to helping you as best as we
+          can to set up an amazing visual iPad magazine-like experience.
+        </p>
+      
+        <p class="introduction">
+          In this Getting Started guide we will walk you trough the steps that
+          are needed to set up the basics. We hope you
+          enjoy this theme and we would very much like to hear from you if
+          you think something is missing or something is not working out for you.
+        </p>
+      
+        <p class="introduction">
+          With happy and kind regards,<br />
+          Michiel Sikkes of Firmhouse<br />
+          <a href="mailto:michiel@firmhouse.com">michiel@firmhouse.com</a>
+          /
+          <a href="mailto:info@firmhouse.com">info@firmhouse.com</a>
+        </p>
+      
+      </div>
+      
+      <div class="page toc">
+        <h2>Table of Contents</h2>
+        
+        <ol>
+          <li>Customizing the book cover</li>
+          <li>Choosing posts or pages</li>
+          <li>Adding text and writing a recipe (shortcodes)</li>
+          <li>Adding a recipe header image with Featured post images</li>
+          <li>More help and extended support</li>
+        </ol>
+      </div>
+      
+      <div class="page">
+        <h2>Customizing the book cover</h2>
+        <p>
+          In this chapter you will learn to set your own cover image to
+          replace the default one. To do this you are going to replace the
+          default cover image file with your own one.
+        </p>
+        <p>
+          Choose an image that you would like to use as the frontpage image.
+          Images with a resolution of <strong>768x1024</strong> work best.
+        </p>
+        <p>
+          Now you should open up your FTP-client and replace the <code>cover.jpg</code>
+          file in the <code>images/</code> folder of the <strong>Cookbook</strong> theme. This file
+          is probably located at this location: <code>wp-content/themes/cookbook/images/cover.jpg</code>.
+        </p>
+        <p>
+          Refresh the page on your Desktop or on your iPad and your new cover
+          image should be there!
+        </p>
+      </div>
+      <div class="page">
+        <h2>Choosing posts or pages</h2>
+        
+        <p>
+          The WordPress Cookbook theme supports two different settings for displaying
+          content: 
+        </p>
+        
+        <ul>
+          <li>
+            You can choose to show all the posts in your WordPress installation just like on
+            a regular blog. Each blog post will have its own swipable page.
+          </li>
+          <li>
+            Or you can choose to display all WordPress pages.
+          </li>
+        </ul>
+        
+        <p>
+          To configure this setting, go to <strong>Settings > Reading</strong> and choose either
+          <strong>Your latest posts</strong> or <strong>A static page</strong>.
+        </p>
+        <p>
+          When you choose <strong>A static page</strong> you can select any arbitrary page from
+          the dropdowns.
+        </p>
+        <p>
+          When the <strong>Your latest posts</strong> option is enabled the theme will
+          load your latest posts.<br />
+          If the <strong>A static page</strong> option is enabled. The theme will load
+          all the pages you have created.
+        </p>
+      </div>
+      <div class="page">
+        <h2>Adding text and writing a recipe (shortcodes)</h2>
+        
+        <p>Now let's add some content!</p>
+        
+        <p>
+          You can add content to your pages, just like you would normally do
+          on any WordPress site. Just start typing your text into the editor,
+          save your page and it all works.
+        </p>
+        
+        <p>
+          We have however added two shortcodes that should allow you to really
+          simply replicate the beautiful look & feel of a paper cookbook.
+        </p>
+        
+        <p>It's better to show you, so here is an example:</p>
+        
+        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 1em;">
+<p>[introduction]</p>
+
+<p>This is my favorite  dish that my mom makes when there is a party. It's really
+simple and you only need some potatoes, olives and some pork.</p>
+
+<p>[/introduction]</p>
+
+<p>[columns]</p>
+
+<div style="font-weight: bold; font-size: 20px; margin-bottom: 1em;">Ingredients (h2)</div>
+<ul><li>2 potatoes</li><li>200 grams pork</li><li>olives</li></ul>
+
+<p>Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Sed posuere consectetur est at lobortis. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+
+<p>[/columns]</p>
+
+        </div>
+        
+        <h3>Shortcode: [introduction]</h3>
+        
+        <p>You can use this shortcode to add an introduction paragraph at the top of the page, or when you are starting to write in columns.</p>
+        
+        <h3>Shortcode: [columns]</h3>
+        
+        <p>On webkit-enabled browsers (like Chrome, Safari and the iPad) this shortcode wil automatically arrange the text inside it into a beautiful 2-column layout.</p>
+        
+        <p>It will automatically fit your text to the columns and it makes sure that the columns will never break inside a paragraph. This way, visitors will get a better reading experience.</p>
+        
+      </div>
+      <div class="page">
+        <h2>Adding a recipe header image with Featured post images</h2>
+        <p>
+          Finally, let's add a beautiful image as a header for a recipe. A
+          header image is a great opportunity to show off how the end result
+          of the dish you are cooking will look like.
+        </p>
+        <p>
+          Adding such an image is easy. Just add it as a <strong>Featured image</strong>
+          to your page or post by using the sidebar widget. As soon as you set the featured image
+          and publish the header will appear on the page.
+      </div>
+      
+      <div class="page">
+        <h2>More help and extended support</h2>
+        <p>If you need more help or have feedback, feature requests or complaints: <strong>please let us know!</strong></p>
+        <p>You can reach us directly by emailing <a href="mailto:support@firmhouse.com">support@firmhouse.com</a>. Please prepend <strong>WordPress Cookbook: </strong> in the subject so we can respond to your request quicker.</p>
+      </div>
+    </div>
+    <div class="sidebar">
+    </div>
+  </div>
+
+</body>
+
+</html>

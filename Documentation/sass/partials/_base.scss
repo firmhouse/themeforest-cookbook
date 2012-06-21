@@ -1,0 +1,13 @@
+@import "blueprint";
+
+.container {
+  @include container;
+  margin-top: 40px;
+  
+  .content {
+    @include column(16);
+  }
+  .sidebar {
+    @include column(8, true);
+  }
+}
