@@ -5,13 +5,14 @@ task :package do
   
   `cd wordpress-cookbook; compass compile`
   
+  `rm -rf package`
   `rm -rf build`
   `rm -f Cookbook.zip`
   `rm -f cookbook.zip`
   
   `mkdir -p build/cookbook`
   
-  theme_files = %w(functions.php images index.php javascripts style.css stylesheets)
+  theme_files = %w(functions.php images index.php javascripts style.css stylesheets sass)
   theme_files_for_zip = theme_files.map { |f| "wordpress-cookbook/#{f}"}
   
   `cp -r #{theme_files_for_zip.join(' ')} build/cookbook`
@@ -22,8 +23,9 @@ task :package do
   
   `mkdir -p build/Cookbook`
   
-  packages_files = %w(Licensing cookbook-theme.zip)
+  packages_files = %w(Licensing cookbook-theme.zip Documentation)
   `cp -r #{packages_files.join(' ')} build/Cookbook`
+  `rm -rf build/Cookbook/Documentation/.sass-cache build/Cookbook/Documentation/sass`
   
   puts `cd build; zip -r ../Cookbook.zip Cookbook -x .gitignore .gitkeep .DS_Store`
   
