@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>WordPress Cookbook Technical Guide</title>
+  <head>
+    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+        <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400italic,400,700,700italic' rel='stylesheet' type='text/css'>
+  </head>
+</head>
+
+<body>
+  
+  <div class="container">
+    
+    <div class="content">
+      <h1>WordPress Cookbook Technical Guide</h1>
+      
+      <div class="page intro">
+        
+        <p class="introduction">
+          Hi! Thanks you for purchasing the WordPress Cookbook theme. The best
+          starting point for creating a great visual iPad-magazine experience
+          by just using WordPress.
+        </p>
+        
+        <p class="introduction">
+          This page shows you how this theme is organized and where you can
+          find certain stuff if you want to customize or develop on it.
+        </p>
+        
+        <p class="introduction">
+          If you still have <strong>remaining questions, please send us an email</strong>! We
+          would be grateful to help you and create some amazong iPad WordPress
+          sites and apps.
+        </p>
+        
+        <p>If you are looking for a quick non-technical usage guide to get started
+          with this theme. Please take a look at the <a href="getting_started.html">Getting Started guide</a>.</p>
+        
+        <p class="introduction">
+          Developer Fist,<br />
+          Michiel Sikkes of Firmhouse<br />
+          <a href="mailto:michiel@firmhouse.com">michiel@firmhouse.com</a> / <a href="mailto:help@firmhouse.com">help@firmhouse.com</a>
+        </p>
+        
+      </div>
+      
+      <div class="page toc">
+        <h2>Table of Contents</h2>
+        
+        <ul>
+          <li>HTML Structure</li>
+          <li>SASS and CSS stylesheets</li>
+          <li>JavaScript and jQuery PageSwipe</li>
+          <li>Shortcodes and PHP files</li>
+          <li>Thanks</li>
+          <li>Feedback and Support</li>
+        </ul>
+      </div>
+      
+      <div class="page">
+        <h2>HTML Structure</h2>
+        
+        <p>
+          The HTML structure of this WordPress theme is a bit different from
+          what you might be used to in other themes. Basically, this theme uses
+          a single-page HTML-structure for displaying separate pages on an
+          iPad.
+        </p>
+        
+        <p>
+          It basically looks like a <code>pages</code> wrapper containing the individual pages. Each post
+          has its own page div like so (simplified):
+        </p>
+        
+<pre style="font-family: monospace; line-height: 1.2em; margin-bottom: 2em; margin-left: 2em;">
+&lt;div class="pages"&gt;
+  &lt;div class="page frontpage"&gt;
+    &lt;?php bloginfo( 'name' ); ?&gt;
+    &lt;?php bloginfo( 'description' ); ?&gt;
+  &lt;/div&gt;
+  &lt;?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?&gt;
+  &lt;div class="page generic"&gt;
+    &lt;h1&gt;&lt;?php the_title() ?&gt;&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;php endwhile; else: ?&gt;
+  &lt;div class="page generic"&gt;
+    &lt;h1&gt;&lt;?php _e('Sorry, no posts matched your criteria.'); ?&gt;&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+        
+        <p>
+          So, all the content of a post or a page will contained by <code>&lt;div class="page generic"&gt; ... &lt;/div&gt;</code>
+        </p>
+          
+      </div>
+      
+      <div class="page">
+        <h2>SASS and CSS stylesheets</h2>
+        
+        <p>All stylesheet files are made available in the <code>stylesheets/</code> directory of the theme folder.</p>
+        
+        <p>
+          The <strong>simplest</strong> way to make modifications to the theme is by modifying the <code>screen.css</code> file. If you
+          do not have knowledge of using the command line on Linux, Mac or Windows then this is probably the best option for you.
+        </p>
+        
+        <p>
+          However, the <strong>best</strong> way of modifying this theme is by editing the original sass files, 
+          which are compiled using <a href="http://compass-style.org">Compass</a>. These original sass files are located
+          in the <code>sass</code> folder.
+        </p>
+        
+        <p>To start development based on the original sass files, you need to <a href="http://compass-style.org/install/">install Compass</a> to compile them to the stylesheet files.</p>
+        
+        <p>After you install <strong>compass</strong> you can run the following command to compile the stylesheets:</p>
+        
+        <p><pre class="shell">compass compile -e production</pre></p>
+        
+        <p>This command will compile the stylesheets from the <code>sass/</code> directory and compile them into the <code>stylesheets/</code> directory.</p>
+        
+        <p>For convenience, you can also run the following command which will watch for file changes of your <strong>sass</strong> files and compile them automatically:</p>
+        
+        <p><pre class="shell">compass watch -e production</pre></p>
+      </div>
+      
+      <div class="page">
+        <h2>JavaScript and jQuery PageSwipe</h2>
+        
+        <p>For the iPad swiping functionality in this theme. We have developed our in-house jQuery plugin, which is called
+          <strong>PageSwipe</strong>. You can find this plugin under <code>javascripts/jquery.pageswipe.js</code>.
+        </p>
+        
+        <p>The PageSwipe functionality is loaded using the <code>javascripts/theme.js</code> file. The only thing this files does
+          is initialize the PageSwipe plugin on the <code>pages</code> class in the theme file.</p>
+      </div>
+      
+      <div class="page">
+        <h2>Shortcodes and PHP files</h2>
+        
+        <p>
+          Just to make sure you can find your way in the PHP code that this theme uses we
+          split them into a few separate files:
+        </p>
+        
+        <ul>
+          <li>functions.php &mdash; Default loader for WordPress, sets theme supports and thumbnails sizes.</li>
+          <li>initializer.php &mdash; Loads the JavaScript files we are using.</li>
+          <li>shortcodes.php &mdash; Contains our shortcode definitions.</li>
+        </ul>
+        
+        <h3>Shortcodes</h3>
+        
+        <p>
+            At the moment, we have two shortcodes: <strong>[introduction][/introduction]</strong> and <strong>[columns][/columns]</strong>. Here
+            is what they do:</p>
+        
+        <ul>
+          <li>[introduction][/introduction] &mdash; All paragraphs contained in this shortcode will be bold and bigger so you can use it as an introduction.</li>
+          <li>[columns][/columns] &mdash; All content that is wrapped by this shortcode will be divided into two columns. Paragraphs get indented and the first letter will be made bigger.</li>
+        </ul>
+      </div>
+      
+      <div class="page">
+        <h2>Thanks</h2>
+        
+        <p>We would like to thank <a href="http://redfactory.nl/themes">RedFactory</a> and the readers of <a href="http://blog.firmhouse.com">
+          our Firmhouse blog</a> for early feedback and testing!</p>
+      </div>
+      
+      <div class="page">
+        <h2>Feedback and support</h2>
+        
+        <p>
+          We are looking forward to your feedback and/or questions regarding the customization of this theme. Also,
+          we'd be grateful to be able to help you if you run into trouble or are missing features that you would
+          like to report.
+        </p>
+        
+        <p>You can send requests to me at <a href="mailto:michiel@firmhouse.com">michiel@firmhouse.com</a> 
+          or our support e-mail address <a href="mailto:help@firmhouse.com">help@firmhouse.com</a>.</p>
+          
+        <p>Happy hacking!<br />Michiel</p>
+      </div>
+      
+    </div>
+    
+  </div>
+  
+</body>
