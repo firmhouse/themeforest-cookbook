@@ -12,7 +12,7 @@ task :package do
   
   `mkdir -p build/cookbook`
   
-  theme_files = %w(functions.php images index.php javascripts style.css stylesheets sass)
+  theme_files = %w(functions.php lib images index.php javascripts style.css stylesheets sass)
   theme_files_for_zip = theme_files.map { |f| "wordpress-cookbook/#{f}"}
   
   `cp -r #{theme_files_for_zip.join(' ')} build/cookbook`
