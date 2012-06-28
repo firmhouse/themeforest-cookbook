@@ -1,0 +1,22 @@
+Sample Cover image
+==================
+
+This theme includes a sample cover image under images/cover.jpg. This image
+is released under the Creative Commons Attribution-ShareAlike 2.0 Generic (CC BY-SA 2.0)
+license.
+
+You can find the contents of this license here: http://creativecommons.org/licenses/by-sa/2.0/deed.en
+
+The sample cover image is taken by NickNguyen on Flickr and you can find it
+here: http://www.flickr.com/photos/nicktakespics/3748516748/
+
+jQuery PageSwipe plugin
+=======================
+
+The plugin under javascripts/jquery.pageswipe.js is All Rights Reserved,
+Firmhouse, which is us! The creator of this theme.
+
+We hereby grant permission to use it under the terms that this theme was
+distributed on ThemeForest. You are therefore not permitted to use this plugin
+for development in your own themes, unless you license it under the original
+license of the plugin, the AGPL.
