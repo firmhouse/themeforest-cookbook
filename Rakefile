@@ -3,7 +3,7 @@ task :package do
   `git submodule init`
   `git submodule update`
   
-  `cd wordpress-cookbook; compass compile`
+  `cd wordpress-cookbook; compass compile -e production`
   
   `rm -rf package`
   `rm -rf build`
@@ -12,7 +12,7 @@ task :package do
   
   `mkdir -p build/cookbook`
   
-  theme_files = %w(functions.php lib images index.php javascripts style.css stylesheets sass)
+  theme_files = %w(screenshot.png functions.php lib images index.php javascripts style.css stylesheets sass)
   theme_files_for_zip = theme_files.map { |f| "wordpress-cookbook/#{f}"}
   
   `cp -r #{theme_files_for_zip.join(' ')} build/cookbook`
